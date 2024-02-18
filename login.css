@@ -15,6 +15,14 @@ body{
     height: 100vh;
 }
 
+#close{
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    margin: 110px 0px 0px 750px;
+    z-index: 2;
+}
+
 /*---------------
     Card Sleeve
   ---------------*/

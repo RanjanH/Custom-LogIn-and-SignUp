@@ -12,6 +12,7 @@
     </head>
     <body>
         <div id = "hover-card">
+            <i id="close" class="fa-solid fa-xmark"></i>
             <div id = "card-sleeve">
                 <div id="signup-content" class="">
                     <h1>Welcome to the Hunt</h1>
@@ -91,7 +92,7 @@
                                 <i class="back fa-solid fa-arrow-left" onclick = " return formChange('back2')"></i>
                                 <div class = "dob">
                                     <!--<i class="form-icon user_icon fa-solid fa-user"></i>-->
-                                    <input class = "input date-input" type = "date" name = "dob" placeholder = "Date Of Birth" onfocus="this.showPicker()" >
+                                    <input placeholder = "Date Of Birth" type = "date" class = "input date-input" name = "dob" onfocus="this.showPicker()" >
                                 </div>
                                 <div class = "password">
                                     <i class="form-icon pass_icon fa-solid fa-lock"></i>
@@ -125,12 +126,14 @@
             var cardSleeve = document.getElementById("card-sleeve");
             var login = document.getElementById("login-content");
             var signup = document.getElementById("signup-content");
+            var closeBtn = document.getElementById("close");
             var id = null;
             function sleeveChange(goTo){
                 if (goTo == 'login'){
                     login.classList.remove("display-off");
                     signup.classList.add("display-off");
                     cardSleeve.style.borderRadius = '0';
+                    closeBtn.style.color = 'black';
                     let pos = 0;
                     clearInterval(id);
                     id = setInterval(frame,2);
@@ -158,6 +161,7 @@
                         }
                         if (pos >= 800){
                             cardSleeve.style.borderRadius = '0px 20px 20px 0px';
+                            closeBtn.style.color = 'white';
                         }
                     }
                 }

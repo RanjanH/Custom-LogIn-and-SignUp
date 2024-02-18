@@ -1,0 +1,201 @@
+body{
+    margin: 0px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#hover-card{
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-color: darkgrey;
+    height: 100vh;
+}
+
+/*---------------
+    Card Sleeve
+  ---------------*/
+
+#card-sleeve{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    background: rgb(9,9,121);
+    background: linear-gradient(180deg, rgba(9,9,121,1) 13%, rgba(16,16,173,1) 51%, rgba(60,60,244,1) 100%);
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 0px 20px 20px 0px;
+    color: white;
+    z-index: 1;
+    margin-top: 105px;
+    margin-left: 400px;
+}
+
+#card-sleeve #signup-content, #card-sleeve #login-content{
+    margin-top: 150px;
+    transition: display ease-in-out 0.5s;
+}
+
+.display-off{
+    display: none;
+}
+
+#card-sleeve p{
+    font-size: 20px;
+}
+
+#card-sleeve .sleeve-btn{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-size: 16px;
+    box-shadow: 0;
+    transition: box-shadow ease 0.5s, background-color ease 0.5s;
+}
+
+#card-sleeve .sleeve-btn:hover{
+    box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.75);
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+/*----------------
+        Card     
+  ----------------*/
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 105px;
+    width: 800px;
+    height: 500px;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 20px;
+}
+
+.card .left{
+    flex-grow: 1;
+    padding: 20px;
+    width: 50%;
+}
+
+.form-icon{
+    position: absolute;
+    padding: 10px 0px 0px 10px;
+    font-size: 15px;
+}
+
+.input{
+    height: 35px;
+    width: 300px;
+    padding-left: 30px;
+    border-radius: 10px;
+    border-width: 1px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.forgot{
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.form-btn{
+    height: 40px;
+    width: 150px;
+    background: rgb(9,9,121);
+    border-radius: 10px;
+    border-width: 0px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.or{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 15px;
+}
+
+.or::before, .or::after{
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000000;
+}
+
+.or:not(:empty)::before{
+    margin-right: 10px;
+}
+
+.or:not(:empty)::after{
+    margin-left: 10px;
+}
+
+.link{
+    display: inline-block;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.5s, color 0.5s;
+}
+
+.link > p{
+    display: inline;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-left: -20px;
+}
+
+.link:hover{
+    background: rgb(9,9,121);
+    color: white;
+    border-color: rgb(9,9,121);
+}
+
+#google-logo, #facebook-logo{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+}
+
+.card .right{
+    flex-grow: 1;
+    padding: 5px 20px 20px 20px;
+    background: whitesmoke;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 0px 20px 20px 0px;
+    width: 50%;
+}
+
+.card .right #second .back{
+    position: absolute;
+    font-size: 25px;
+    margin: -50px 0px 0px -170px;
+    cursor: pointer;
+}
+
+.card .right #second .date-input::-webkit-calendar-picker-indicator{
+    position: relative;
+    left: -270px;
+    font-size: 17px;
+}

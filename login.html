@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Log In
+        </title>
+        <link rel = "stylesheet" href = "login.css">
+        <script src="https://kit.fontawesome.com/2a2be8978e.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id = "hover-card">
+            <div id = "card-sleeve">
+                <div id="signup-content" class="">
+                    <h1>Welcome to the Hunt</h1>
+                    <p>New to the Hunt?<br>Want to be a part of the Hunt?</p>
+                    <button class = "sleeve-btn" type = "button" onclick = "sleeveChange('login')">Join the Hunt</button>
+                </div>
+                <div id="login-content" class="display-off">
+                    <div class = "head">
+                        <h1>Back to Hunt?</h1>
+                    </div>
+                    <div class = "body">
+                        <p>Already Have an account?</p>
+                    </div>
+                    <div class = "sleeve_btn">
+                        <button class = "sleeve-btn" type = "button" onclick = "sleeveChange('signup')">Start Hunting</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="left">
+                    <h1>Log In</h1>
+                    <div class = "form">
+                        <form>
+                            <div class = "username">
+                                <i class="form-icon user_icon fa-solid fa-user"></i>
+                                <input class = "input" type = "text" name = "uname" placeholder = "Enter your Username" >
+                            </div>
+                            <div class = "password">
+                                <i class="form-icon pass_icon fa-solid fa-lock"></i>
+                                <input class = "input" type = "password" name = "pass" placeholder = "Enter your Password" >
+                            </div>
+                            <div class = "forgot">
+                            <a class = "forgot" href="">Forgot your password?</a>
+                            </div>
+                            <div class = "login_button">
+                                <button class = "login-btn form-btn" type = "submit" >Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="or">OR</div>
+                    <div class="social">
+                        <div class="link">
+                            <p>Continue with Google</p> 
+                            <img id = "google-logo" src = "google.png">
+                        </div>
+                        <div class="link">
+                            <p>Continue with Facebook</p>
+                            <img id = "facebook-logo" src = "facebook.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <h1>Sign Up</h1>
+                    <div class="form">
+                        <form>
+                            <div id="first" class="">
+                                <div class = "firstname">
+                                    <i class="form-icon user_icon fa-solid fa-user"></i>
+                                    <input class = "input" type = "text" name = "name" placeholder = "Full name" >
+                                </div>
+                                <div class = "username">
+                                    <i class="form-icon user_icon fa-solid fa-user"></i>
+                                    <input class = "input" type = "text" name = "uname" placeholder = "User Name" >
+                                </div>
+                                <div class="email">
+                                    <i class="form-icon fa-solid fa-envelope"></i>
+                                    <input class = "input" type = "email" name = "email" placeholder = "Email" >
+                                </div>
+                                <div class="next_btn">
+                                    <button class = "next-btn form-btn" onclick = "return formChange('first')">Next</button>
+                                    <button class = "confimr-btn form-btn" type = "submit" style = "display: none;">Confirm</button>
+                                </div>
+                            </div>
+                            <div id="second" class="display-off">
+                                <i class="back fa-solid fa-arrow-left" onclick = " return formChange('back2')"></i>
+                                <div class = "dob">
+                                    <!--<i class="form-icon user_icon fa-solid fa-user"></i>-->
+                                    <input class = "input date-input" type = "date" name = "dob" placeholder = "Date Of Birth" onfocus="this.showPicker()" >
+                                </div>
+                                <div class = "password">
+                                    <i class="form-icon pass_icon fa-solid fa-lock"></i>
+                                    <input class = "input" type = "password" name = "pass" placeholder = "Password" ><br>
+                                    <i class="form-icon pass_icon fa-solid fa-lock"></i>
+                                    <input class = "input" type = "password" name = "pass2" placeholder = "Confirm Password" >
+                                </div>
+                                <div class="next_btn">
+                                    <button class = "next-btn form-btn" style = "display: none;" onclick = "return formChange('second')">Next</button>
+                                    <button class = "confimr-btn form-btn" type = "submit" >Confirm</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="or">OR</div>
+                        <div class="social">
+                            <div class="link">
+                                <p>Continue with Google</p> 
+                                <img id = "google-logo" src = "google.png">
+                            </div>
+                            <div class="link">
+                                <p>Continue with Facebook</p>
+                                <img id = "facebook-logo" src = "facebook.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var cardSleeve = document.getElementById("card-sleeve");
+            var login = document.getElementById("login-content");
+            var signup = document.getElementById("signup-content");
+            var id = null;
+            function sleeveChange(goTo){
+                if (goTo == 'login'){
+                    login.classList.remove("display-off");
+                    signup.classList.add("display-off");
+                    cardSleeve.style.borderRadius = '0';
+                    let pos = 0;
+                    clearInterval(id);
+                    id = setInterval(frame,2);
+                    function frame(){
+                        if (pos <= 800){
+                            pos += 5;
+                            cardSleeve.style.marginLeft = 400 - pos + 'px';
+                        }
+                        if (pos >= 800){
+                        cardSleeve.style.borderRadius = '20px 0px 0px 20px';
+                        }
+                    }
+                }
+                else{
+                    login.classList.add("display-off");
+                    signup.classList.remove("display-off");
+                    cardSleeve.style.borderRadius = '0';
+                    let pos = 0;
+                    clearInterval(id);
+                    id = setInterval(frame,2);
+                    function frame(){
+                        if (pos <= 800){
+                            pos += 5;
+                            cardSleeve.style.marginLeft = -400 + pos + 'px';
+                        }
+                        if (pos >= 800){
+                            cardSleeve.style.borderRadius = '0px 20px 20px 0px';
+                        }
+                    }
+                }
+            }
+        </script>
+        <script>
+            let first = document.getElementById("first");
+            let second = document.getElementById("second");
+            function formChange(curPage){
+                if (curPage == 'first'){
+                    first.classList.add("display-off");
+                    second.classList.remove("display-off");
+                } else if (curPage == 'back2'){
+                    first.classList.remove("display-off");
+                    second.classList.add("display-off");
+                }
+
+                return false;
+            }
+        </script>
+
+    </body>
+
+</html>

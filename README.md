@@ -3,7 +3,7 @@
 
  This can be used as an Overlay for your website and if you want it to be placed on another page then you can remove the close button.
 
-Below is the line of code for the close button:
+Below is the line of code for the close button:<br>
  ```<i id="close" class="fa-solid fa-xmark"></i>```
 
 The CSS of this button is under the id ```close```. Remove that too if you are removing the button.
